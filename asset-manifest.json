@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6bea0a58.css",
+    "main.js": "/static/js/main.6b471721.js",
+    "static/media/portfolioHeaderBackground.png": "/static/media/portfolioHeaderBackground.2f272997628742dfe910.png",
+    "static/media/ogledalo-drustva.png": "/static/media/ogledalo-drustva.c3c8091be2a242861d73.png",
+    "static/media/LittleZen.png": "/static/media/LittleZen.01d0798fc7435c622895.png",
+    "static/media/ogledalo-drustva-webpage.png": "/static/media/ogledalo-drustva-webpage.f128e056c4a3927b98c4.png",
+    "static/media/about1.jpg": "/static/media/about1.178a7a5034249410ac40.jpg",
+    "static/media/hero-section-background.png": "/static/media/hero-section-background.ea9f4cff7a290983ac32.png",
+    "static/media/ogledalo-drustva-home.png": "/static/media/ogledalo-drustva-home.138e2f06a6820520aa06.png",
+    "static/media/about2.jpg": "/static/media/about2.71dab4ad2b4760ab3460.jpg",
+    "static/media/yoga-website.png": "/static/media/yoga-website.c5f73f994b79cfc69766.png",
+    "static/media/about3.jpg": "/static/media/about3.aef657ad85f0cb622da7.jpg",
+    "static/media/MyGoalsAPP.png": "/static/media/MyGoalsAPP.8a8dee97c741ee43c823.png",
+    "static/media/hoverCircleImage.jpg": "/static/media/hoverCircleImage.a4fb29405840d55a18d2.jpg",
+    "static/media/dependable.png": "/static/media/dependable.293e960248b49fa7a9c4.png",
+    "static/media/adapt.png": "/static/media/adapt.a2481532afc7931c816b.png",
+    "static/media/product-development.png": "/static/media/product-development.6d0adb9a5beae12905c1.png",
+    "static/media/sustainable-development.png": "/static/media/sustainable-development.c7192ed66c0739515115.png",
+    "static/media/logo-black.png": "/static/media/logo-black.3d02a4378738d52b4c43.png",
+    "static/media/logo-white.png": "/static/media/logo-white.c2449e0e4d349ae7eb4a.png",
+    "static/media/testUserThree.png": "/static/media/testUserThree.c44b99f8679fe03551f7.png",
+    "static/media/testUserTwo.png": "/static/media/testUserTwo.cb2dfb81698842cead93.png",
+    "static/media/testUserOne.png": "/static/media/testUserOne.6018512ddd6383256779.png",
+    "static/media/graphic-design.png": "/static/media/graphic-design.025a2303c7ac6d35387f.png",
+    "index.html": "/index.html",
+    "static/media/getFetch.cjs": "/static/media/getFetch.7a7a1c81840c96d5a3ea.cjs",
+    "main.6bea0a58.css.map": "/static/css/main.6bea0a58.css.map",
+    "main.6b471721.js.map": "/static/js/main.6b471721.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6bea0a58.css",
+    "static/js/main.6b471721.js"
+  ]
+}

@@ -2,6 +2,7 @@
   "name": "memento-tech-com",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://www.memento-tech.com",
   "dependencies": {
     "i18next": "^23.8.3",
     "i18next-browser-languagedetector": "^7.2.0",

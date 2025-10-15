@@ -4,43 +4,63 @@ import RocketIcon from "../icons/RocketIcon";
 import SmartphoneIcon from "../icons/SmartphoneIcon";
 import BrowserIcon from "../icons/BrowserIcon";
 import { SectionFullContainer, SectionHeader } from "./SectionComponentUtil";
+import getTranslation from "../config/translationsUtil";
 
 const WhatWeDoSection = () => {
   return (
     <SectionFullContainer>
-      <SectionHeader>What we do</SectionHeader>
+      <SectionHeader>
+        {getTranslation("home.page.what.we.do.section.title")}
+      </SectionHeader>
       <CardsContainer>
         <Card>
-          <h3>Web Development</h3>
+          <h3>
+            {getTranslation(
+              "home.page.what.we.do.section.web.development.title"
+            )}
+          </h3>
           <BrowserIcon height={120} />
           <CardText>
-            We build fast, responsive, and modern websites tailored to your
-            business needs, ensuring seamless performance across all devices.
+            {getTranslation(
+              "home.page.what.we.do.section.web.development.description"
+            )}
           </CardText>
         </Card>
         <Card>
-          <h3>Mobile Apps</h3>
+          <h3>
+            {getTranslation("home.page.what.we.do.section.mobile.apps.title")}
+          </h3>
           <SmartphoneIcon height={120} />
           <CardText>
-            From iOS to Android, we create user-friendly mobile applications
-            that engage customers and bring your ideas to life on the go.
+            {getTranslation(
+              "home.page.what.we.do.section.mobile.apps.description"
+            )}
           </CardText>
         </Card>
         <Card>
-          <h3>Digital Transformation</h3>
+          <h3>
+            {getTranslation(
+              "home.page.what.we.do.section.digital.transformation.title"
+            )}
+          </h3>
           <RocketIcon height={120} />
           <CardText>
-            Helping businesses modernize processes, integrate technology, and
-            stay competitive in the digital-first world.
+            {getTranslation(
+              "home.page.what.we.do.section.digital.transformation.description"
+            )}
           </CardText>
         </Card>
         <Card>
-          <h3>IT Consulting & Support</h3>
+          <h3>
+            {getTranslation(
+              "home.page.what.we.do.section.consulting.and.support.title"
+            )}
+          </h3>
           <SupportIcon height={120} />
           <CardText>
-            We provide expert advice and ongoing support to help you choose the
-            right technology, optimize processes, and keep your systems running
-            smoothly.
+            {getTranslation(
+              "home.page.what.we.do.section.consulting.and.support.description"
+            )}
           </CardText>
         </Card>
       </CardsContainer>

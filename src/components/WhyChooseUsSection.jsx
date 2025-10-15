@@ -6,60 +6,60 @@ import productDevelopment from "../assets/product-development.png";
 import passionDevelopment from "../assets/sustainable-development.png";
 import adaptable from "../assets/adapt.png";
 import { Link } from "react-router";
+import getTranslation from "../config/translationsUtil";
+import { contactNavigation } from "../config/navigationConfig";
 
 const WhyChooseUsSection = () => {
   return (
     <SectionFullContainer>
-      <SectionHeader>Why Choose Us</SectionHeader>
+      <SectionHeader>
+        {getTranslation("home.page.why.choose.us.section.title")}
+      </SectionHeader>
       <Subheader>
-        At Memento Tech, we believe technology should be more then just work -
-        it should inspire. We don't just deliver websites or apps, we craft
-        digital experiences that leave a mark.
+        {getTranslation("home.page.why.choose.us.section.subtitle")}
       </Subheader>
       <CardsContainer>
         <CardContainer>
           <CardText>
-            Every project is unique. We listen, adapt, and shape solutions
-            around your story.
+            {getTranslation("home.page.why.choose.us.section.adaptable")}
           </CardText>
-          <CardImage src={adaptable} />
+          <CardImage src={adaptable} alt="Adaptable icon" />
         </CardContainer>
         <CardContainer>
-          <CardImage src={dependable} />
+          <CardImage src={dependable} alt="Dependable icon"/>
           <CardText>
-            We're not just developers; we're collaborators invested in your
-            long-term success.
+            {getTranslation("home.page.why.choose.us.section.collaboration")}
           </CardText>
         </CardContainer>
         <CardContainer>
           <CardText>
-            Clean, modern, and user-friendly interfaces that people actually
-            love using.
+            {getTranslation("home.page.why.choose.us.section.design")}
           </CardText>
-          <CardImage src={graphicDesign} />
+          <CardImage src={graphicDesign} alt="Graphic icon"/>
         </CardContainer>
         <CardContainer>
-          <CardImage src={productDevelopment} />
+          <CardImage src={productDevelopment} alt="Product development icon " />
           <CardText>
-            From concept to launch (and beyond), we handle every detail so you
-            can focus on your vision.
+            {getTranslation("home.page.why.choose.us.section.vision")}
           </CardText>
         </CardContainer>
         <CardContainer>
           <CardText>
-            Whether it's a business tool or a social cause, we bring passion and
-            precision to make it meaningful.
+            {getTranslation("home.page.why.choose.us.section.meaning")}
           </CardText>
-          <CardImage src={passionDevelopment} />
+          <CardImage src={passionDevelopment} alt="Passion development icon"/>
         </CardContainer>
         <CardContainer>
           <CardText>
-            Your idea deserves more than just code — it deserves care,
-            creativity, and craftsmanship.
+            {getTranslation("home.page.why.choose.us.section.final.part.one")}
             <br />
-            Let's bring it to life together.
+            {getTranslation("home.page.why.choose.us.section.final.part.two")}
           </CardText>
-          <StartButton>Start Your Project</StartButton>
+          <StartButton to={contactNavigation.to}>
+            {getTranslation(
+              "home.page.why.choose.us.section.start.button.label"
+            )}
+          </StartButton>
         </CardContainer>
       </CardsContainer>
     </SectionFullContainer>

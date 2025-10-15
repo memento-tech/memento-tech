@@ -1,23 +1,28 @@
-// @ts-nocheck
 import styled from "styled-components";
 import logoBlack from "../assets/logo-black.png";
 import logoWhite from "../assets/logo-white.png";
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import SendwichIcon from "./SendwichIcon";
-import ArrowIcon from "../icons/ArrowIcon";
 import BlackScreenLogo from "../icons/BlackScreenLogo";
 import WhiteScreenLogo from "../icons/WhiteScreenLogo";
+import LanguageSwitcher from "./LanguageSwitcher";
+import getTranslation from "../config/translationsUtil";
+import {
+  getHeaderNavigation,
+  homeNavigation,
+} from "../config/navigationConfig";
+import { useCookies } from "../providers/CookieContext";
 
 const NavBar = ({ onThemeChange }) => {
   const [menuIconClicked, setMenuIconClicked] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
+  const { getGlobalCookie, setGlobalCookie } = useCookies();
   const [themeBlackChange, setThemeBlackChange] = useState(false);
 
   useEffect(() => {
     onThemeChange(themeBlackChange);
-  }, [themeBlackChange]);
+  }, [themeBlackChange, onThemeChange]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,11 +33,27 @@ const NavBar = ({ onThemeChange }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const onChangeTheme = () => {
+    setThemeBlackChange(!themeBlackChange);
+    const globalCookie = getGlobalCookie();
+    globalCookie.whiteTheme = !themeBlackChange;
+    setGlobalCookie(globalCookie);
+  };
+
+  useEffect(() => {
+    setThemeBlackChange(
+      getGlobalCookie().whiteTheme !== undefined && getGlobalCookie().whiteTheme
+    );
+  }, [getGlobalCookie]);
+
   return (
     <>
       <NavBarContainer $scrolled={scrolled.toString()}>
-        <StyledLogoLink to={"/"}>
-          <NavBarLogo src={themeBlackChange ? logoWhite : logoBlack} />
+        <StyledLogoLink to={homeNavigation.to}>
+          <NavBarLogo
+            src={themeBlackChange ? logoWhite : logoBlack}
+            alt="Logo Memento Tech"
+          />
           <LogoText>Memento Tech</LogoText>
         </StyledLogoLink>
         <SendwichIcon
@@ -42,27 +63,22 @@ const NavBar = ({ onThemeChange }) => {
         />
 
         <LinksContainer>
-          <NavBarLink to={"/"}>Home</NavBarLink>
-          <NavBarLink to={"/portfolio"}>Portfolio</NavBarLink>
-          <NavBarLink to={"/tech-hub"}>About Us</NavBarLink>
-          <NavBarLink to={"/contact-us"}>Contact</NavBarLink>
+          {getHeaderNavigation().map((navigation) => (
+            <NavBarLink to={navigation.to} key={navigation.labelCode}>
+              {getTranslation(navigation.labelCode)}
+            </NavBarLink>
+          ))}
         </LinksContainer>
 
         {menuIconClicked && (
           <MobileLinksContainer>
-            <MobileNavBarLink to={"/"}>Home</MobileNavBarLink>
-            <MobileNavBarLink to={"/portfolio"}>Portfolio</MobileNavBarLink>
-            <MobileNavBarLink to={"/tech-hub"}>About Us</MobileNavBarLink>
-            <MobileNavBarLink to={"/contact-us"}>Contact</MobileNavBarLink>
+            {getHeaderNavigation().map((navigation) => (
+              <MobileNavBarLink to={navigation.to} key={navigation.labelCode}>
+                {getTranslation(navigation.labelCode)}
+              </MobileNavBarLink>
+            ))}
             <LanguageContainer>
-              <LanguageChanger>
-                En
-                <ArrowIcon
-                  height={20}
-                  rotate={90}
-                  color={themeBlackChange ? "#ffffff" : "#000000"}
-                />
-              </LanguageChanger>
+              <LanguageSwitcher themeBlackChange={themeBlackChange} />
               <VerticalSpacer />
               <BlackScreenLogoContainer
                 onClick={() => setThemeBlackChange(!themeBlackChange)}
@@ -78,18 +94,9 @@ const NavBar = ({ onThemeChange }) => {
         )}
 
         <LeftMostPart>
-          <LanguageChanger>
-            En
-            <ArrowIcon
-              height={20}
-              rotate={90}
-              color={themeBlackChange ? "#ffffff" : "#000000"}
-            />
-          </LanguageChanger>
+          <LanguageSwitcher themeBlackChange={themeBlackChange} />
           <VerticalSpacer />
-          <BlackScreenLogoContainer
-            onClick={() => setThemeBlackChange(!themeBlackChange)}
-          >
+          <BlackScreenLogoContainer onClick={onChangeTheme}>
             {themeBlackChange ? (
               <WhiteScreenLogo height={18} />
             ) : (
@@ -225,6 +232,11 @@ const NavBarLink = styled(Link)`
   @media screen and (max-width: 600px) {
     margin-top: 1rem;
   }
+
+  &:last-child {
+    color: #fff;
+    background-color: #246bad;
+  }
 `;
 
 const LeftMostPart = styled.div`
@@ -236,12 +248,6 @@ const LeftMostPart = styled.div`
     display: none;
     visibility: hidden;
   }
-`;
-
-const LanguageChanger = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 const VerticalSpacer = styled.div`

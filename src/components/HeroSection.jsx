@@ -4,13 +4,16 @@ import logoImage from "../assets/logo-white.png";
 import ogledaloDrustva from "../assets/ogledalo-drustva.png";
 import ogledaloDrustvaHome from "../assets/ogledalo-drustva-home.png";
 import yogaWebsite from "../assets/yoga-website.png";
+import { Link } from "react-router";
+import getTranslation from "../config/translationsUtil";
+import { contactNavigation, portfolioNavigation } from "../config/navigationConfig";
 
 const HeroSection = () => {
   return (
     <Container>
-      <ContainerImage src={backgroundImage} />
+      <ContainerImage src={backgroundImage} alt="Hero Section Background Image" />
       <TopContent>
-        <Logo src={logoImage} />
+        <Logo src={logoImage} alt="Logo Memento Tech"/>
         <TopTextContainer>
           <TopText>Memento Tech</TopText>
           <HorizontalLineContainer>
@@ -19,17 +22,19 @@ const HeroSection = () => {
             <HorizontalLine />
             <HorizontalLine />
           </HorizontalLineContainer>
-          <BottomText>WHERE ALL YOUR DIGITAL DREAMS COME TRUE</BottomText>
+          <BottomText>{getTranslation("home.page.main.subtitle")}</BottomText>
           <Description>
-            We craft powerful, user-friendly web, mobile, and desktop
-            applications that help businesses grow, engage customers and stand
-            out in the digital world.
+            {getTranslation("home.page.main.description")}
           </Description>
         </TopTextContainer>
       </TopContent>
       <ButtonsContainer>
-        <Button>Get a Free Quote</Button>
-        <Button style={{ backgroundColor: "#054268" }}>View Portfolio</Button>
+        <Button to={contactNavigation.to}>
+          {getTranslation("home.page.free.quote.button.label")}
+        </Button>
+        <Button to={portfolioNavigation.to} style={{ backgroundColor: "#054268" }}>
+          {getTranslation("home.page.portfolio.button.label")}
+        </Button>
       </ButtonsContainer>
 
       <AbsScreensContainer>
@@ -39,7 +44,7 @@ const HeroSection = () => {
             bottom: -30,
           }}
         >
-          <AbsScreenImg src={ogledaloDrustva} />
+          <AbsScreenImg src={ogledaloDrustva} alt="Ogledalo Drustva Image home page" />
         </AbsScreenContainer>
         <AbsScreenContainer
           style={{
@@ -50,6 +55,7 @@ const HeroSection = () => {
         >
           <AbsScreenImg
             src={ogledaloDrustvaHome}
+            alt="Ogledalo drustva image admin page"
             style={{ height: "auto", width: "100px" }}
           />
         </AbsScreenContainer>
@@ -60,7 +66,7 @@ const HeroSection = () => {
             bottom: -30,
           }}
         >
-          <AbsScreenImg src={yogaWebsite} />
+          <AbsScreenImg src={yogaWebsite} alt="Yoga image home page"/>
         </AbsScreenContainer>
       </AbsScreensContainer>
     </Container>
@@ -154,16 +160,15 @@ const Description = styled.p`
 
 const ButtonsContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
   align-items: flex-end;
 
-  margin: auto;
-  width: 50%;
+  margin-left: auto;
+  width: 48%;
   margin-bottom: 2rem;
   z-index: 1;
 `;
 
-const Button = styled.div`
+const Button = styled(Link)`
   color: white;
   border: 1px solid white;
   border-radius: 20px;

@@ -4,7 +4,6 @@ import WhatWeDoSection from "../components/WhatWeDoSection";
 import OurWorkSection from "../components/OurWorkSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import WhyChooseUsSection from "../components/WhyChooseUsSection";
-import Footer from "../components/Footer";
 
 const HomePage = () => {
   return (
@@ -14,7 +13,6 @@ const HomePage = () => {
       <OurWorkSection />
       <TestimonialsSection />
       <WhyChooseUsSection />
-      <Footer />
     </Container>
   );
 };

@@ -4,12 +4,17 @@ import StarIcon from "../icons/StarIcon";
 import testUserOne from "../assets/testUserOne.png";
 import testUserTwo from "../assets/testUserTwo.png";
 import testUserThree from "../assets/testUserThree.png";
+import getTranslation from "../config/translationsUtil";
 
 const TestimonialsSection = () => {
   return (
     <SectionFullContainer>
-      <SectionHeader>Testimonials</SectionHeader>
-      <Subheader>What Our Clients Saying</Subheader>
+      <SectionHeader>
+        {getTranslation("home.page.testimonials.section.title")}
+      </SectionHeader>
+      <Subheader>
+        {getTranslation("home.page.testimonials.section.subtitle")}
+      </Subheader>
       <TestimonialCardsContainer>
         <Card>
           <StarsContainer>
@@ -20,14 +25,21 @@ const TestimonialsSection = () => {
             <StarIcon />
           </StarsContainer>
           <Text>
-            Outsource your digital marketing efforts, instead of handling
-            in-house. They can provide your business with a variety.
+            {getTranslation(
+              "home.page.testimonials.section.user.one.description"
+            )}
           </Text>
           <UserContainer>
-            <UserImage src={testUserOne} />
+            <UserImage src={testUserOne} alt="User 1 image"/>
             <UserDetails>
-              <UserName>Graham Griffiths</UserName>
-              <UserDescription>Twitor</UserDescription>
+              <UserName>
+                {getTranslation("home.page.testimonials.section.user.one.name")}
+              </UserName>
+              <UserDescription>
+                {getTranslation(
+                  "home.page.testimonials.section.user.one.title"
+                )}
+              </UserDescription>
             </UserDetails>
           </UserContainer>
         </Card>
@@ -40,15 +52,21 @@ const TestimonialsSection = () => {
             <StarIcon />
           </StarsContainer>
           <Text>
-            A digital agency is a business you hire to outsource your digital
-            marketing efforts, instead of handling in-house. They can provide
-            your business with a variety of digital solutions.
+            {getTranslation(
+              "home.page.testimonials.section.user.two.description"
+            )}
           </Text>
           <UserContainer>
-            <UserImage src={testUserTwo} />
+            <UserImage src={testUserTwo} alt="User 2 image"/>
             <UserDetails>
-              <UserName>Alan Martí</UserName>
-              <UserDescription>Meta Inc.</UserDescription>
+              <UserName>
+                {getTranslation("home.page.testimonials.section.user.two.name")}
+              </UserName>
+              <UserDescription>
+                {getTranslation(
+                  "home.page.testimonials.section.user.two.title"
+                )}
+              </UserDescription>
             </UserDetails>
           </UserContainer>
         </Card>
@@ -61,14 +79,23 @@ const TestimonialsSection = () => {
             <StarIcon />
           </StarsContainer>
           <Text>
-            Provide your business with a variety of digital solutions to promote
-            your product or service online.
+            {getTranslation(
+              "home.page.testimonials.section.user.three.description"
+            )}
           </Text>
           <UserContainer>
-            <UserImage src={testUserThree} />
+            <UserImage src={testUserThree} alt="User 3 image"/>
             <UserDetails>
-              <UserName>Richardo Kann</UserName>
-              <UserDescription>Photogram</UserDescription>
+              <UserName>
+                {getTranslation(
+                  "home.page.testimonials.section.user.three.name"
+                )}
+              </UserName>
+              <UserDescription>
+                {getTranslation(
+                  "home.page.testimonials.section.user.three.title"
+                )}
+              </UserDescription>
             </UserDetails>
           </UserContainer>
         </Card>

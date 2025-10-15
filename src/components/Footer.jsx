@@ -5,6 +5,11 @@ import linkedInIcon from "../assets/Linkedin Icon.png";
 import twitterIcon from "../assets/Twitter Icon.png";
 import facebookIcon from "../assets/Facebook Icon.png";
 import hoverCircleImage from "../assets/hoverCircleImage.jpg";
+import getTranslation from "../config/translationsUtil";
+import {
+  contactNavigation,
+  getFooterNavigation,
+} from "../config/navigationConfig";
 
 const Footer = () => {
   return (
@@ -12,27 +17,39 @@ const Footer = () => {
       <ColoredContainer>
         <ContentContainer>
           <LeftPart>
-            <ReadyTitle>Ready to get started?</ReadyTitle>
-            <KickstartButton>KICKSTART YOUR FUTURE</KickstartButton>
+            <ReadyTitle>
+              {getTranslation("footer.ready.to.start.title")}
+            </ReadyTitle>
+            <KickstartButton to={contactNavigation.to}>
+              {getTranslation("footer.kickstart.button.label")}
+            </KickstartButton>
             <LogoContainer>
-              <Logo src={logo} />
+              <Logo src={logo} alt="Logo Memento Tech"/>
               <LogoText>Memento Tech</LogoText>
             </LogoContainer>
           </LeftPart>
           <QuickLinksSection>
-            <QuickLinksHeader>Quick Links</QuickLinksHeader>
-            <LinkStyled>Home</LinkStyled>
-            <LinkStyled>Projects</LinkStyled>
-            <LinkStyled>Services</LinkStyled>
-            <LinkStyled>About Us</LinkStyled>
-            <LinkStyled>Contact</LinkStyled>
-            <LinkStyled>Careers</LinkStyled>
+            <QuickLinksHeader>
+              {getTranslation("footer.quick.links.label")}
+            </QuickLinksHeader>
+            {getFooterNavigation().map((navigation) => (
+              <LinkStyled to={navigation.to} key={navigation.labelCode}>
+                {getTranslation(navigation.labelCode)}
+              </LinkStyled>
+            ))}
           </QuickLinksSection>
-                  <RightPart>
-                      
-            <SocialNetworkLinkImg src={facebookIcon} />
-            <SocialNetworkLinkImg src={linkedInIcon} />
-            <SocialNetworkLinkImg src={twitterIcon} />
+          <RightPart>
+            <div>
+              <SocialNetworksPart>
+                <SocialNetworkLinkImg src={facebookIcon} alt="Facebook Logo" />
+                <SocialNetworkLinkImg src={linkedInIcon} alt="Linked In Logo" />
+                <SocialNetworkLinkImg src={twitterIcon} alt="X Logo" />
+              </SocialNetworksPart>
+
+              <EmailLink href="mailto:info@memento-tech.com">
+                info@memento-tech.com
+              </EmailLink>
+            </div>
             <HoverCircle
               style={{ height: "300px", width: "300px", top: "-120px" }}
             >
@@ -105,6 +122,7 @@ const ContentContainer = styled.div`
   display: grid;
   grid-template-columns: 3fr 1fr 3fr;
 `;
+
 const LeftPart = styled.div`
   display: flex;
   flex-direction: column;
@@ -127,6 +145,7 @@ const KickstartButton = styled(Link)`
   font-weight: 400;
   margin-left: 1rem;
   font-size: 14px;
+  text-transform: uppercase;
 
   &:hover {
     scale: 1.1;
@@ -161,6 +180,7 @@ const QuickLinksSection = styled.div`
 const QuickLinksHeader = styled.p`
   color: #fff;
 `;
+
 const LinkStyled = styled(Link)`
   color: #fff;
   margin-top: 0.5rem;
@@ -176,6 +196,16 @@ const RightPart = styled.div`
   align-items: flex-end;
   padding-bottom: 3rem;
   position: relative;
+`;
+
+const SocialNetworksPart = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+`;
+
+const EmailLink = styled.a`
+  color: #fff;
 `;
 
 const SocialNetworkLinkImg = styled.img`

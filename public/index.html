@@ -1,20 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Essential Meta Tags -->
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+    <!-- Basic Info -->
+    <title>Memento Tech | Software Development & Digital Solutions</title>
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Memento Tech builds powerful digital solutions — from modern websites to scalable applications. Explore our portfolio, services, and innovative technology approach."
     />
+    <meta name="keywords" content="Memento Tech, software development, web design, React, Java, app development, digital transformation, tech company" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://memento-tech.com/" />
+    <meta property="og:title" content="Memento Tech | Software Development & Digital Solutions" />
+    <meta
+      property="og:description"
+      content="Explore Memento Tech — experts in web and app development, modern UX/UI design, and digital innovation."
+    />
+    <meta property="og:image" content="https://memento-tech.com/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://memento-tech.com/" />
+    <meta name="twitter:title" content="Memento Tech | Software Development & Digital Solutions" />
+    <meta
+      name="twitter:description"
+      content="Discover how Memento Tech helps businesses grow with innovative web and software solutions."
+    />
+    <meta name="twitter:image" content="https://memento-tech.com/og-image.jpg" />
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" href="https://memento-tech.com/favicon.ico" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Structured Data (JSON-LD for Google Rich Results) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Memento Tech",
+        "url": "https://memento-tech.com/",
+        "logo": "https://memento-tech.com/logo.png",
+        "sameAs": [
+          "https://www.linkedin.com/company/memento-tech",
+          "https://github.com/memento-tech",
+          "https://twitter.com/mementotech"
+        ],
+        "description": "Memento Tech specializes in modern software development, web design, and innovative digital products."
+      }
+    </script>
+
+    <!-- Fonts -->
     <link
       href="https://db.onlinewebfonts.com/c/1a5c2d8bbd4e28d99a6efcbb9a5b378f?family=JejuMyeongjo"
       rel="stylesheet"
@@ -22,39 +65,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Bebas+Neue&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
-      rel="stylesheet"
-    />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://memento-tech.com/" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <!-- Performance & Crawling Optimizations -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="rating" content="General" />
+    <meta name="distribution" content="Global" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

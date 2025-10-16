@@ -182,6 +182,7 @@ const Text = styled.p`
   text-align: center;
   line-height: 25px;
   letter-spacing: 1px;
+  color: black;
 `;
 
 const UserContainer = styled.div`

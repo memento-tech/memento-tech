@@ -7,6 +7,19 @@ export const SectionFullContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 3rem;
+
+  @media screen and (max-width: 600px) {
+    padding-top: 2rem;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    margin-top: 2rem;
+    padding-top: 0;
+
+    &:first-child {
+      margin-top: 4rem;
+    }
+  }
 `;
 
 export const SectionHeader = styled.h2`

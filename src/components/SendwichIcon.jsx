@@ -24,7 +24,7 @@ const SendwichButton = styled.button`
   visibility: hidden;
   display: none;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 1000px) {
     visibility: visible;
     display: block;
 

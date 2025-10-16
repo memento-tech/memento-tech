@@ -26,7 +26,7 @@ const WhyChooseUsSection = () => {
           <CardImage src={adaptable} alt="Adaptable icon" />
         </CardContainer>
         <CardContainer>
-          <CardImage src={dependable} alt="Dependable icon"/>
+          <CardImage src={dependable} alt="Dependable icon" />
           <CardText>
             {getTranslation("home.page.why.choose.us.section.collaboration")}
           </CardText>
@@ -35,7 +35,7 @@ const WhyChooseUsSection = () => {
           <CardText>
             {getTranslation("home.page.why.choose.us.section.design")}
           </CardText>
-          <CardImage src={graphicDesign} alt="Graphic icon"/>
+          <CardImage src={graphicDesign} alt="Graphic icon" />
         </CardContainer>
         <CardContainer>
           <CardImage src={productDevelopment} alt="Product development icon " />
@@ -47,7 +47,7 @@ const WhyChooseUsSection = () => {
           <CardText>
             {getTranslation("home.page.why.choose.us.section.meaning")}
           </CardText>
-          <CardImage src={passionDevelopment} alt="Passion development icon"/>
+          <CardImage src={passionDevelopment} alt="Passion development icon" />
         </CardContainer>
         <CardContainer>
           <CardText>
@@ -72,6 +72,10 @@ const Subheader = styled.h3`
   width: 50%;
   font-size: 16px;
   margin-bottom: 2rem;
+
+  @media screen and (max-width: 600px) {
+    width: 90%;
+  }
 `;
 
 const CardsContainer = styled.div`
@@ -80,6 +84,12 @@ const CardsContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 40px;
+
+  @media screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
 
 const CardContainer = styled.div`
@@ -110,6 +120,11 @@ const CardImage = styled.img`
   object-fit: cover;
   width: 100px;
   height: 100px;
+
+  @media screen and (max-width: 600px) {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 const StartButton = styled(Link)`

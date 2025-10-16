@@ -115,8 +115,14 @@ const ProjectContainer = styled.div`
   color: #000000;
 
   @media screen and (max-width: 600px) {
-    grid-template-columns: 1ft;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 1000px) {
+    width: 90%;
   }
 `;
 
@@ -140,6 +146,10 @@ const ProjectDescriptionContainer = styled.div`
   padding: 3rem 2rem 3rem 1rem;
   margin: auto;
   width: 80%;
+  @media screen and (max-width: 600px) {
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const ProjectTitle = styled.h3`
@@ -160,4 +170,8 @@ const ProjectText = styled.p`
   line-height: 25px;
   margin-top: 2rem;
   margin-bottom: 0;
+
+  @media screen and (max-width: 600px) {
+    text-align: center;
+  }
 `;

@@ -6,14 +6,20 @@ import ogledaloDrustvaHome from "../assets/ogledalo-drustva-home.png";
 import yogaWebsite from "../assets/yoga-website.png";
 import { Link } from "react-router";
 import getTranslation from "../config/translationsUtil";
-import { contactNavigation, portfolioNavigation } from "../config/navigationConfig";
+import {
+  contactNavigation,
+  portfolioNavigation,
+} from "../config/navigationConfig";
 
 const HeroSection = () => {
   return (
     <Container>
-      <ContainerImage src={backgroundImage} alt="Hero Section Background Image" />
+      <ContainerImage
+        src={backgroundImage}
+        alt="Hero Section Background Image"
+      />
       <TopContent>
-        <Logo src={logoImage} alt="Logo Memento Tech"/>
+        <Logo src={logoImage} alt="Logo Memento Tech" />
         <TopTextContainer>
           <TopText>Memento Tech</TopText>
           <HorizontalLineContainer>
@@ -32,7 +38,10 @@ const HeroSection = () => {
         <Button to={contactNavigation.to}>
           {getTranslation("home.page.free.quote.button.label")}
         </Button>
-        <Button to={portfolioNavigation.to} style={{ backgroundColor: "#054268" }}>
+        <Button
+          to={portfolioNavigation.to}
+          style={{ backgroundColor: "#054268" }}
+        >
           {getTranslation("home.page.portfolio.button.label")}
         </Button>
       </ButtonsContainer>
@@ -44,7 +53,10 @@ const HeroSection = () => {
             bottom: -30,
           }}
         >
-          <AbsScreenImg src={ogledaloDrustva} alt="Ogledalo Drustva Image home page" />
+          <AbsScreenImg
+            src={ogledaloDrustva}
+            alt="Ogledalo Drustva Image home page"
+          />
         </AbsScreenContainer>
         <AbsScreenContainer
           style={{
@@ -66,7 +78,7 @@ const HeroSection = () => {
             bottom: -30,
           }}
         >
-          <AbsScreenImg src={yogaWebsite} alt="Yoga image home page"/>
+          <AbsScreenImg src={yogaWebsite} alt="Yoga image home page" />
         </AbsScreenContainer>
       </AbsScreensContainer>
     </Container>
@@ -84,6 +96,19 @@ const Container = styled.div`
 
   display: grid;
   grid-template-rows: 1fr 1fr;
+
+  @media screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    min-height: 100px;
+    height: 350px;
+  }
 `;
 
 const ContainerImage = styled.img`
@@ -95,6 +120,15 @@ const ContainerImage = styled.img`
   top: 0;
   left: 0;
   border-bottom: 1px solid #ffe8c2;
+
+  @media screen and (max-width: 600px) {
+    height: 120%;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    width: 200%;
+    object-position: center;
+  }
 `;
 
 const TopContent = styled.div`
@@ -105,12 +139,24 @@ const TopContent = styled.div`
   width: 80%;
   margin: auto;
   padding-bottom: 10px;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
 `;
 
 const Logo = styled.img`
   object-fit: fill;
   width: auto;
   height: 200px;
+
+  @media screen and (max-width: 600px) {
+    height: 150px;
+    margin-top: 2rem;
+  }
 `;
 
 const TopTextContainer = styled.div`
@@ -127,6 +173,11 @@ const TopText = styled.h1`
   margin: 0;
   text-align: start;
   font-family: "JejuMyeongjo";
+
+  @media screen and (max-width: 600px) {
+    font-size: 2rem;
+    text-align: center;
+  }
 `;
 
 const HorizontalLineContainer = styled.div`
@@ -150,12 +201,30 @@ const BottomText = styled.h3`
 
   font-family: "Courier New", Courier, monospace;
   font-weight: 100;
+
+  @media screen and (max-width: 600px) {
+    margin: 0;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    margin-right: 0;
+  }
 `;
 
 const Description = styled.p`
   text-align: start;
   width: 700px;
   font-style: italic;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 
 const ButtonsContainer = styled.div`
@@ -166,6 +235,20 @@ const ButtonsContainer = styled.div`
   width: 48%;
   margin-bottom: 2rem;
   z-index: 1;
+
+  @media screen and (max-width: 600px) {
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0;
+    margin-top: 3rem;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    width: unset;
+    margin-right: 2rem;
+    height: 50px;
+  }
 `;
 
 const Button = styled(Link)`
@@ -186,12 +269,38 @@ const AbsScreensContainer = styled.div`
   position: absolute;
   bottom: 0;
   left: 150px;
+
+  @media screen and (max-width: 600px) {
+    position: relative;
+    width: 90%;
+    left: 0;
+    scale: 0.7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    position: relative;
+    scale: 0.8;
+    left: 0;
+    width: 60%;
+  }
 `;
 
 const AbsScreenContainer = styled.div`
   z-index: 100;
   position: absolute;
   bottom: 0;
+
+  @media screen and (max-width: 600px) {
+    position: relative;
+    left: 0 !important;
+
+    &:nth-child(2) {
+      transform: translateY(-30px);
+    }
+  }
 `;
 
 const AbsScreenImg = styled.img`

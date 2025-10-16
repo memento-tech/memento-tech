@@ -73,7 +73,11 @@ const NavBar = ({ onThemeChange }) => {
         {menuIconClicked && (
           <MobileLinksContainer>
             {getHeaderNavigation().map((navigation) => (
-              <MobileNavBarLink to={navigation.to} key={navigation.labelCode}>
+              <MobileNavBarLink
+                to={navigation.to}
+                key={navigation.labelCode}
+                onClick={() => setMenuIconClicked(!menuIconClicked)}
+              >
                 {getTranslation(navigation.labelCode)}
               </MobileNavBarLink>
             ))}
@@ -128,7 +132,7 @@ const NavBarContainer = styled.div`
 
   z-index: 1000;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 1000px) {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -167,7 +171,7 @@ const LinksContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 1000px) {
     display: none;
   }
 `;
@@ -182,13 +186,13 @@ const MobileLinksContainer = styled.div`
   background-color: ${(props) => props.theme.headerBackground};
   width: 100%;
   height: 30vh;
-  bottom: calc(-30vh - 5px);
+  bottom: calc(-30vh - 2px);
   left: 0;
   z-index: 10001;
 
   padding: 2rem;
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 1000px) {
     display: none;
   }
 `;

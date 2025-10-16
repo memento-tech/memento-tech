@@ -141,6 +141,15 @@ const ContactContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 60%;
+
+  @media screen and (max-width: 600px) {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 1000px) {
+    width: 90%;
+  }
 `;
 
 const FormContainer = styled.div`
@@ -161,6 +170,12 @@ const FormContainer = styled.div`
   border-top: none;
   border-radius: 20px;
   box-shadow: -10px 5px 20px #7474748c;
+
+  @media screen and (max-width: 600px) {
+    box-sizing: border-box;
+    margin: 0;
+    margin-top: 2rem;
+  }
 `;
 
 const FormTitle = styled.h2``;

@@ -241,6 +241,10 @@ const HeaderTitle = styled.h1`
 const HeaderDescription = styled.h3`
   width: 50%;
   font-size: 25px;
+
+  @media screen and (max-width: 600px) {
+    width: 90%;
+  }
 `;
 
 const ServicesContainer = styled.div`
@@ -250,6 +254,21 @@ const ServicesContainer = styled.div`
   gap: 4rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
+
+  @media screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
 `;
 
 const ServiceContainer = styled.div`

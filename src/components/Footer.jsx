@@ -24,7 +24,7 @@ const Footer = () => {
               {getTranslation("footer.kickstart.button.label")}
             </KickstartButton>
             <LogoContainer>
-              <Logo src={logo} alt="Logo Memento Tech"/>
+              <Logo src={logo} alt="Logo Memento Tech" />
               <LogoText>Memento Tech</LogoText>
             </LogoContainer>
           </LeftPart>
@@ -88,6 +88,7 @@ const Footer = () => {
           </RightPart>
         </ContentContainer>
       </ColoredContainer>
+      <CopyrightContainer>© 2025 Memento Tech</CopyrightContainer>
     </FooterContainer>
   );
 };
@@ -115,12 +116,28 @@ const ColoredContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 600px) {
+    border-top-left-radius: 45%;
+    border-top-right-radius: 45%;
+  }
 `;
 
 const ContentContainer = styled.div`
   width: 40%;
   display: grid;
   grid-template-columns: 3fr 1fr 3fr;
+
+  @media screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    grid-template-columns: 3fr 3fr;
+    width: 50%;
+  }
 `;
 
 const LeftPart = styled.div`
@@ -128,6 +145,10 @@ const LeftPart = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+
+  @media screen and (max-width: 1000px) {
+    align-items: center;
+  }
 `;
 
 const ReadyTitle = styled.h3`
@@ -135,6 +156,10 @@ const ReadyTitle = styled.h3`
   font-size: 35px;
   margin-left: 1rem;
   margin-bottom: 1rem;
+
+  @media screen and (max-width: 600px) {
+    margin: 0;
+  }
 `;
 
 const KickstartButton = styled(Link)`
@@ -150,6 +175,11 @@ const KickstartButton = styled(Link)`
   &:hover {
     scale: 1.1;
   }
+
+  @media screen and (max-width: 600px) {
+    margin: 0;
+    margin-top: 1rem;
+  }
 `;
 
 const LogoContainer = styled.div`
@@ -157,17 +187,38 @@ const LogoContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-top: 3rem;
+
+  @media screen and (max-width: 600px) {
+    margin-top: 2rem;
+  }
 `;
 
 const Logo = styled.img`
   height: 150px;
   width: auto;
+  @media screen and (max-width: 600px) {
+    height: 100px;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    height: 130px;
+  }
 `;
 
 const LogoText = styled.h3`
   color: #fff;
   text-transform: uppercase;
   font-size: 35px;
+
+  @media screen and (max-width: 600px) {
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    font-size: 30px;
+  }
 `;
 
 const QuickLinksSection = styled.div`
@@ -175,6 +226,11 @@ const QuickLinksSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 1000px) {
+    display: none;
+    visibility: hidden;
+  }
 `;
 
 const QuickLinksHeader = styled.p`
@@ -225,6 +281,11 @@ const HoverCircle = styled.div`
   background-color: #f0f0f0;
   border-radius: 50%;
   overflow: hidden;
+
+  @media screen and (max-width: 600px) {
+    display: none;
+    visibility: hidden;
+  }
 `;
 
 const HoverCircleImage = styled.img`
@@ -234,4 +295,15 @@ const HoverCircleImage = styled.img`
   height: 280px;
 
   transform: translateX(-50px) translateY(10px);
+`;
+
+const CopyrightContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 11px;
+
+  transform: translateX(-50%);
 `;

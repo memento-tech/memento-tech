@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import titleContainerBackground from "../assets/portfolioHeaderBackground.png";
+import titleContainerBackground from "../assets/portfolioHeaderBackground.jpg";
 import headerImage1 from "../assets/about1.jpg";
 import headerImage2 from "../assets/about2.jpg";
 import headerImage3 from "../assets/about3.jpg";
@@ -68,6 +68,9 @@ const HeaderSection = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const TitleContainer = styled.div`
@@ -98,6 +101,17 @@ const TitleContainer = styled.div`
       left: 0;
     }
   }
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const TitleContainerBackground = styled.img`
@@ -111,6 +125,7 @@ const TitleContainerBackground = styled.img`
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   opacity: 0.5;
+  object-fit: cover;
 `;
 
 const HeaderTitle = styled.h1`
@@ -127,6 +142,11 @@ const HeaderTitle = styled.h1`
   font-weight: 400;
   font-style: normal;
   font-size: 4.1rem;
+  z-index: 10;
+
+  @media screen and (max-width: 600px) {
+    font-size: 3rem;
+  }
 `;
 
 const HeaderImagesContainer = styled.div`
@@ -142,6 +162,11 @@ const HeaderImagesContainer = styled.div`
       right: 0;
     }
   }
+
+  @media screen and (max-width: 600px) {
+    width: 90%;
+    max-height: 500px;
+  }
 `;
 
 const HeaderImage = styled.img`
@@ -149,4 +174,38 @@ const HeaderImage = styled.img`
   box-shadow: -10px 10px 20px #3f3f3fae;
 
   object-fit: cover;
+
+  @media screen and (max-width: 600px) {
+    width: 200px !important;
+    height: 200px !important;
+
+    &:first-child {
+      transform: translateX(50%) translateY(10%);
+    }
+
+    &:nth-child(2) {
+      transform: translateX(-50%) translateY(-30%);
+    }
+
+    &:last-child {
+      transform: translateX(50%) translateY(-70%);
+    }
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    width: 180px !important;
+    height: 180px !important;
+
+    &:first-child {
+      transform: translateX(-30%) translateY(20%);
+    }
+
+    &:nth-child(2) {
+      transform: translateX(-20%);
+    }
+
+    &:last-child {
+      transform: translateX(10%) translateY(10%);
+    }
+  }
 `;

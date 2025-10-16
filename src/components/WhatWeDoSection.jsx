@@ -76,6 +76,21 @@ const CardsContainer = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 7%;
   margin-top: 1rem;
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4%;
+    margin-top: 0;
+    height: auto;
+    width: 90%;
+  }
 `;
 
 const Card = styled.div`
@@ -90,6 +105,12 @@ const Card = styled.div`
   border-radius: 10px;
   box-shadow: -5px 5px 4px ${(props) => props.theme.backdrop};
   color: #000000;
+
+  @media screen and (max-width: 600px) {
+    justify-content: flex-start;
+    box-sizing: border-box;
+    row-gap: 0;
+  }
 `;
 
 const CardText = styled.p`

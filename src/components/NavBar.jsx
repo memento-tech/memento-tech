@@ -248,7 +248,7 @@ const LeftMostPart = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 1000px) {
     display: none;
     visibility: hidden;
   }

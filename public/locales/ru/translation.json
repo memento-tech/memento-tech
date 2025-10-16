@@ -135,5 +135,11 @@
   "contact.page.form.message.company.name.placeholder": "Название вашей компании",
   "contact.page.form.contact.your.message.label": "Ваше сообщение",
   "contact.page.form.contact.your.message.placeholder": "Напишите нам сообщение, что угодно, что вам нужно...",
-  "contact.page.form.contact.information.title": "Контактная информация"
+  "contact.page.form.contact.information.title": "Контактная информация",
+  "contact.page.form.message.submit.button.label": "Отправить сообщение",
+  "contact.page.form.message.submiting.button.label": "Отправка сообщения",
+  "contact.page.form.message.send.success": "✅ Сообщение успешно отправлено!",
+  "contact.page.form.message.send.failed": "❌ Не удалось отправить сообщение. Повторите попытку.",
+  "contact.page.form.message.send.error": "⚠️ Произошла ошибка. Повторите попытку.",
+  "contact.page.form.message.missing.fields": "Пожалуйста, заполните все обязательные поля."
 }

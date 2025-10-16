@@ -135,5 +135,11 @@
   "contact.page.form.message.company.name.placeholder": "Name deines Unternehmens",
   "contact.page.form.contact.your.message.label": "Deine Nachricht",
   "contact.page.form.contact.your.message.placeholder": "Schreibe uns eine Nachricht, was du benötigst...",
-  "contact.page.form.contact.information.title": "Kontaktinformationen"
+  "contact.page.form.contact.information.title": "Kontaktinformationen",
+  "contact.page.form.message.submit.button.label": "Nachricht Senden",
+  "contact.page.form.message.submiting.button.label": "Nachricht Senden",
+  "contact.page.form.message.send.success": "✅ Nachricht erfolgreich gesendet!",
+  "contact.page.form.message.send.failed": "❌ Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+  "contact.page.form.message.send.error": "⚠️ Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+  "contact.page.form.message.missing.fields": "Bitte füllen Sie alle Pflichtfelder aus."
 }

@@ -4,11 +4,84 @@ import TextInput from "../components/TextInput";
 import EmailIcon from "../icons/EmailIcon";
 import PhoneIcon from "../icons/PhoneIcon";
 import LocationIcon from "../icons/LocationIcon";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import getTranslation from "../config/translationsUtil";
 
 const GetInTouchSection = () => {
-  const [firstName, setFirstName] = useState();
+  const [showMessage, setShowMessage] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+  const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isError, setIsError] = useState(false);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (checkValidity()) {
+      setIsError(true);
+      setShowMessage(
+        getTranslation("contact.page.form.message.missing.fields")
+      );
+      return;
+    }
+
+    setIsSubmitting(true);
+    setShowMessage("");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "8d2759db-025f-4111-b024-0637edabb9b5",
+          subject: "New message from contact " + firstName,
+          from_name: `${firstName} ${lastName}`,
+          email: email,
+          company: company,
+          message: message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsError(false);
+        setShowMessage(
+          getTranslation("contact.page.form.message.send.success")
+        );
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setCompany("");
+        setMessage("");
+      } else {
+        setIsError(true);
+        setShowMessage(getTranslation("contact.page.form.message.send.failed"));
+      }
+    } catch (error) {
+      setIsError(true);
+      setShowMessage(getTranslation("contact.page.form.message.send.error"));
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  useEffect(() => {
+    if (showMessage !== "" && !isError) {
+      setTimeout(() => {
+        setMessage("");
+        setIsError(false);
+      }, 3000);
+    }
+  }, [showMessage, isError, setMessage, setIsError]);
+
+  const checkValidity = () => {
+    return (
+      firstName === "" || lastName === "" || email === "" || message === ""
+    );
+  };
 
   return (
     <>
@@ -19,18 +92,23 @@ const GetInTouchSection = () => {
           {getTranslation("contact.page.subtitle.two")}
         </PageDescription>
       </HeaderContainer>
+
       <ContactContainer>
-        <FormContainer>
+        <FormContainer onSubmit={handleSubmit}>
           <FormTitle>
             {getTranslation("contact.page.form.message.title")}
           </FormTitle>
+          <FormMessage style={{ color: isError ? "red" : "000" }}>
+            {showMessage}
+          </FormMessage>
+
           <FormNameInputContainer>
             <Input
               title={getTranslation(
                 "contact.page.form.message.first.name.label"
               )}
               value={firstName}
-              onChange={(event) => setFirstName(event.value)}
+              onChange={(e) => setFirstName(e.target.value)}
               placeholder={getTranslation(
                 "contact.page.form.message.first.name.placeholder"
               )}
@@ -40,47 +118,59 @@ const GetInTouchSection = () => {
               title={getTranslation(
                 "contact.page.form.message.last.name.label"
               )}
-              value={firstName}
-              onChange={(event) => setFirstName(event.value)}
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
               placeholder={getTranslation(
                 "contact.page.form.message.last.name.placeholder"
               )}
               required={true}
             />
           </FormNameInputContainer>
+
           <Input
             title={getTranslation("contact.page.form.message.email.label")}
-            value={firstName}
-            onChange={(event) => setFirstName(event.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder={getTranslation(
               "contact.page.form.message.email.placeholder"
             )}
             required={true}
           />
+
           <Input
             title={getTranslation(
               "contact.page.form.message.company.name.label"
             )}
-            value={firstName}
-            onChange={(event) => setFirstName(event.value)}
+            value={company}
+            onChange={(e) => setCompany(e.target.value)}
             placeholder={getTranslation(
               "contact.page.form.message.company.name.placeholder"
             )}
           />
+
           <TextInput
             title={getTranslation(
               "contact.page.form.contact.your.message.label"
             )}
-            value={firstName}
-            onChange={(event) => setFirstName(event.value)}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             placeholder={getTranslation(
               "contact.page.form.contact.your.message.placeholder"
             )}
             required={true}
             maxLength={530}
           />
+
+          <SubmitButton type="submit" disabled={isSubmitting}>
+            {isSubmitting
+              ? getTranslation(
+                  "contact.page.form.message.submiting.button.label"
+                )
+              : getTranslation("contact.page.form.message.submit.button.label")}
+          </SubmitButton>
         </FormContainer>
-        <FormContainer>
+
+        <FormContainer as="div">
           <FormTitle>
             {getTranslation("contact.page.form.contact.information.title")}
           </FormTitle>
@@ -152,7 +242,7 @@ const ContactContainer = styled.div`
   }
 `;
 
-const FormContainer = styled.div`
+const FormContainer = styled.form`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -178,7 +268,15 @@ const FormContainer = styled.div`
   }
 `;
 
-const FormTitle = styled.h2``;
+const FormTitle = styled.h2`
+  margin-bottom: 0;
+`;
+
+const FormMessage = styled.p`
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+`;
 
 const FormNameInputContainer = styled.div`
   display: flex;
@@ -190,4 +288,21 @@ const FormNameInputContainer = styled.div`
 
 const ContactInfo = styled.a`
   margin-top: 0;
+`;
+
+const SubmitButton = styled.button`
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  border: 1px solid #012f5b;
+  border-radius: 5px;
+
+  padding: 2px 10px;
+
+  &:hover {
+    background-color: #012f5b;
+    scale: 1.1;
+    color: #fff;
+  }
 `;

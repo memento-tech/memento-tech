@@ -50,7 +50,7 @@ const WhyChooseUsSection = () => {
           <CardImage src={passionDevelopment} alt="Passion development icon" />
         </CardContainer>
         <CardContainer>
-          <CardText>
+          <CardText style={{ width: "100%" }}>
             {getTranslation("home.page.why.choose.us.section.final.part.one")}
             <br />
             {getTranslation("home.page.why.choose.us.section.final.part.two")}

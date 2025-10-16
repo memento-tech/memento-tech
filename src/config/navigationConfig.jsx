@@ -35,7 +35,7 @@ export const contactNavigation = {
 
 export const careersNavigation = {
   labelCode: "navigation.carees.title",
-  to: "/carees",
+  to: "/careers",
   showInHeader: false,
   showInFooter: true,
 };

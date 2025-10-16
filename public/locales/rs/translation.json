@@ -141,5 +141,10 @@
   "contact.page.form.message.send.success": "✅ Poruka je uspešno poslata!",
   "contact.page.form.message.send.failed": "❌ Slanje poruke nije uspelo. Molimo pokušajte ponovo.",
   "contact.page.form.message.send.error": "⚠️ Došlo je do greške. Molimo pokušajte ponovo.",
-  "contact.page.form.message.missing.fields": "Molimo vas da popunite sva obavezna polja."
+  "contact.page.form.message.missing.fields": "Molimo vas da popunite sva obavezna polja.",
+
+  "---------------------------CAREERS_PAGE----------------------------": "",
+
+  "careers.page.title": "Dobrodošli u tim Memento Tech",
+  "careers.page.no.job.openings.message": "Trenutno nema otvorenih radnih mesta u Memento Tech."
 }

@@ -6,13 +6,16 @@ import getTranslation from "../config/translationsUtil";
 import { useCookies } from "../providers/CookieContext";
 import { useTranslation } from "react-i18next";
 
-const LanguageSwitcher = ({ themeBlackChange }) => {
+const LanguageSwitcher = ({
+  themeBlackChange,
+  onlanguageChange = () => {},
+}) => {
   const [popupOpen, setPopupOpen] = useState(false);
   const { i18n } = useTranslation();
   const { getGlobalCookie, setGlobalCookie } = useCookies();
   const [selectedLanguage, setSelectedLanguage] = useState(null);
 
-  const onLanguageChange = (languageCode) => {
+  const onLanguageChangeInternal = (languageCode) => {
     const selected = ALL_LANGUAGES.filter(
       (language) => language.languageCode === languageCode
     )[0];
@@ -25,6 +28,7 @@ const LanguageSwitcher = ({ themeBlackChange }) => {
     const globalCookie = getGlobalCookie();
     globalCookie.currentLanguage = selected;
     setGlobalCookie(globalCookie);
+    onlanguageChange();
   };
 
   useEffect(() => {
@@ -62,7 +66,7 @@ const LanguageSwitcher = ({ themeBlackChange }) => {
         <LanguagePopup>
           {ALL_LANGUAGES.map((lang) => (
             <LangTitle
-              onClick={() => onLanguageChange(lang.languageCode)}
+              onClick={() => onLanguageChangeInternal(lang.languageCode)}
               key={lang.languageCode}
             >
               {lang.languageCode} ({getTranslation(lang.titleCode)})

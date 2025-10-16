@@ -38,6 +38,7 @@ const NavBar = ({ onThemeChange }) => {
     const globalCookie = getGlobalCookie();
     globalCookie.whiteTheme = !themeBlackChange;
     setGlobalCookie(globalCookie);
+    setMenuIconClicked(!menuIconClicked);
   };
 
   useEffect(() => {
@@ -82,11 +83,12 @@ const NavBar = ({ onThemeChange }) => {
               </MobileNavBarLink>
             ))}
             <LanguageContainer>
-              <LanguageSwitcher themeBlackChange={themeBlackChange} />
+              <LanguageSwitcher
+                themeBlackChange={themeBlackChange}
+                onlanguageChange={() => setMenuIconClicked(!menuIconClicked)}
+              />
               <VerticalSpacer />
-              <BlackScreenLogoContainer
-                onClick={() => setThemeBlackChange(!themeBlackChange)}
-              >
+              <BlackScreenLogoContainer onClick={onChangeTheme}>
                 {themeBlackChange ? (
                   <WhiteScreenLogo height={18} />
                 ) : (

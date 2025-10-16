@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router";
 import NavBar from "./components/NavBar";
 import HomePage from "./pages/HomePage";
 import FullContainer from "./components/FullContainer";
@@ -16,6 +16,33 @@ import CareersPage from "./pages/CareersPage";
 import { useTranslation } from "react-i18next";
 import { useCookies } from "./providers/CookieContext";
 import { ALL_LANGUAGES } from "./config/i18n";
+
+const AppWrapper = ({ onUpdateCurrentTheme }) => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const path = decodeURIComponent(window.location.search.substring(1));
+    if (path) {
+      navigate(path, { replace: true });
+    }
+  }, [navigate]);
+
+  return (
+    <>
+      <ScrollToTop />
+      <NavBar onThemeChange={onUpdateCurrentTheme} />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutUsPage />} />
+        <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/contact" element={<ContactUsPage />} />
+        <Route path="/careers" element={<CareersPage />} />
+      </Routes>
+      <Footer />
+    </>
+  );
+};
 
 function App() {
   const [currentTheme, setCurrentTheme] = useState(defaultTheme);
@@ -46,17 +73,7 @@ function App() {
       <FullContainer>
         <FullContainerBackground />
         <BrowserRouter>
-          <ScrollToTop />
-          <NavBar onThemeChange={updateCurrentTheme} />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutUsPage />} />
-            <Route path="/portfolio" element={<PortfolioPage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/contact" element={<ContactUsPage />} />
-            <Route path="/careers" element={<CareersPage />} />
-          </Routes>
-          <Footer />
+          <AppWrapper onUpdateCurrentTheme={updateCurrentTheme} />
         </BrowserRouter>
       </FullContainer>
     </ThemeProvider>

@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.6bea0a58.css",
-    "main.js": "/static/js/main.6b471721.js",
-    "static/media/portfolioHeaderBackground.png": "/static/media/portfolioHeaderBackground.2f272997628742dfe910.png",
+    "main.js": "/static/js/main.5071fe9b.js",
     "static/media/ogledalo-drustva.png": "/static/media/ogledalo-drustva.c3c8091be2a242861d73.png",
+    "static/media/portfolioHeaderBackground.jpg": "/static/media/portfolioHeaderBackground.607375d4c3fd1a19c204.jpg",
     "static/media/LittleZen.png": "/static/media/LittleZen.01d0798fc7435c622895.png",
     "static/media/ogledalo-drustva-webpage.png": "/static/media/ogledalo-drustva-webpage.f128e056c4a3927b98c4.png",
     "static/media/about1.jpg": "/static/media/about1.178a7a5034249410ac40.jpg",
@@ -27,10 +27,10 @@
     "index.html": "/index.html",
     "static/media/getFetch.cjs": "/static/media/getFetch.7a7a1c81840c96d5a3ea.cjs",
     "main.6bea0a58.css.map": "/static/css/main.6bea0a58.css.map",
-    "main.6b471721.js.map": "/static/js/main.6b471721.js.map"
+    "main.5071fe9b.js.map": "/static/js/main.5071fe9b.js.map"
   },
   "entrypoints": [
     "static/css/main.6bea0a58.css",
-    "static/js/main.6b471721.js"
+    "static/js/main.5071fe9b.js"
   ]
 }

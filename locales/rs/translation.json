@@ -135,5 +135,11 @@
   "contact.page.form.message.company.name.placeholder": "Naziv vaše kompanije",
   "contact.page.form.contact.your.message.label": "Vaša poruka",
   "contact.page.form.contact.your.message.placeholder": "Napišite nam poruku, bilo šta što vam je potrebno...",
-  "contact.page.form.contact.information.title": "Kontakt informacije"
+  "contact.page.form.contact.information.title": "Kontakt informacije",
+  "contact.page.form.message.submit.button.label": "Pošalji poruku",
+  "contact.page.form.message.submiting.button.label": "Slanje poruke",
+  "contact.page.form.message.send.success": "✅ Poruka je uspešno poslata!",
+  "contact.page.form.message.send.failed": "❌ Slanje poruke nije uspelo. Molimo pokušajte ponovo.",
+  "contact.page.form.message.send.error": "⚠️ Došlo je do greške. Molimo pokušajte ponovo.",
+  "contact.page.form.message.missing.fields": "Molimo vas da popunite sva obavezna polja."
 }

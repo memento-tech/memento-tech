@@ -135,5 +135,11 @@
   "contact.page.form.message.company.name.placeholder": "Your Company Name",
   "contact.page.form.contact.your.message.label": "Your Message",
   "contact.page.form.contact.your.message.placeholder": "Write us a message, anything you require...",
-  "contact.page.form.contact.information.title": "Contact Information"
+  "contact.page.form.contact.information.title": "Contact Information",
+  "contact.page.form.message.submit.button.label": "Send Message",
+  "contact.page.form.message.submiting.button.label": "Sending Message",
+  "contact.page.form.message.send.success": "✅ Message sent successfully!",
+  "contact.page.form.message.send.failed": "❌ Failed to send message. Please try again.",
+  "contact.page.form.message.send.error": "⚠️ An error occurred. Please try again.",
+  "contact.page.form.message.missing.fields": "Please populate all required fields."
 }

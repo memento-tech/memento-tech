@@ -141,5 +141,10 @@
   "contact.page.form.message.send.success": "✅ Message sent successfully!",
   "contact.page.form.message.send.failed": "❌ Failed to send message. Please try again.",
   "contact.page.form.message.send.error": "⚠️ An error occurred. Please try again.",
-  "contact.page.form.message.missing.fields": "Please populate all required fields."
+  "contact.page.form.message.missing.fields": "Please populate all required fields.",
+
+  "---------------------------CAREERS_PAGE----------------------------": "",
+
+  "careers.page.title": "Welcome to Memento Tech Team",
+  "careers.page.no.job.openings.message": "Currently there are no available job openings at Memento Tech."
 }

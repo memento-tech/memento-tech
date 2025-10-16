@@ -118,4 +118,9 @@ const CardText = styled.p`
   width: 80%;
   margin: 1rem 1rem;
   font-weight: 400;
+
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  text-align: center;
 `;

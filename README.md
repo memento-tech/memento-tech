@@ -1,10 +1,63 @@
 # 🧠 Memento Tech — Innovative Software Development & Digital Solutions
 
-![React](https://img.shields.io/badge/React-18.3.1-61DAFB?logo=react)
-![Styled Components](https://img.shields.io/badge/Styled--Components-6.1.15-DB7093?logo=styled-components)
-![Build](https://img.shields.io/badge/Build-passing-brightgreen)
-![License](https://img.shields.io/badge/License-Proprietary-red)
-![Hosted](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-181717?logo=github)
+## 🏗 Technology Stack
+
+### 🚀 Backend
+
+![Java](https://img.shields.io/badge/Java-17-ED8B00?logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring-Boot-6DB33F?logo=springboot&logoColor=white)
+![Spring Security](https://img.shields.io/badge/Spring-Security-6DB33F?logo=springsecurity&logoColor=white)
+![Hibernate](https://img.shields.io/badge/Hibernate-ORM-59666C?logo=hibernate&logoColor=white)
+![Maven](https://img.shields.io/badge/Maven-Build-C71A36?logo=apachemaven&logoColor=white)
+![Gradle](https://img.shields.io/badge/Gradle-Build-02303A?logo=gradle&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-Backend-339933?logo=nodedotjs&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-4169E1?logo=postgresql&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?logo=mysql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-Cache-DC382D?logo=redis&logoColor=white)
+![Elasticsearch](https://img.shields.io/badge/Elasticsearch-Search-005571?logo=elasticsearch&logoColor=white)
+![REST API](https://img.shields.io/badge/REST-API-02569B)
+![JWT](https://img.shields.io/badge/JWT-Auth-000000?logo=jsonwebtokens&logoColor=white)
+
+---
+
+### 🎨 Frontend
+
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
+![Next.js](https://img.shields.io/badge/Next.js-14-000000?logo=nextdotjs&logoColor=white)
+![Angular](https://img.shields.io/badge/Angular-Framework-DD0031?logo=angular&logoColor=white)
+![jQuery](https://img.shields.io/badge/jQuery-Library-0769AD?logo=jquery&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-Markup-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-Styling-1572B6?logo=css3&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-Framework-06B6D4?logo=tailwindcss&logoColor=white)
+![JSON](https://img.shields.io/badge/JSON-Data-000000?logo=json&logoColor=white)
+
+---
+
+### 📱 Mobile
+
+![Android](https://img.shields.io/badge/Android-Native-3DDC84?logo=android&logoColor=white)
+![iOS](https://img.shields.io/badge/iOS-Native-000000?logo=apple&logoColor=white)
+
+---
+
+### 🛠 DevOps & Tools
+
+![Git](https://img.shields.io/badge/Git-Version%20Control-F05032?logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-Code-181717?logo=github&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Containers-2496ED?logo=docker&logoColor=white)
+![Docker Compose](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)
+![NGINX](https://img.shields.io/badge/NGINX-Reverse%20Proxy-009639?logo=nginx&logoColor=white)
+![Cloudflare](https://img.shields.io/badge/Cloudflare-CDN-F38020?logo=cloudflare&logoColor=white)
+![DigitalOcean](https://img.shields.io/badge/DigitalOcean-Cloud-0080FF?logo=digitalocean&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-Server-FCC624?logo=linux&logoColor=black)
+![CI/CD](https://img.shields.io/badge/CI%2FCD-Automation-2088FF?logo=githubactions&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub-Actions-2088FF?logo=githubactions&logoColor=white)
+![Monitoring](https://img.shields.io/badge/Monitoring-Production-6E40C9)
+![SSL](https://img.shields.io/badge/SSL-Secure-0A66C2)
+
+---
 
 **Memento Tech** is a modern software development company that builds innovative digital solutions tailored to your business needs.  
 We specialize in **web and mobile app development**, **UI/UX design**, and **digital strategy**, helping companies turn ideas into scalable, future-ready technology.
